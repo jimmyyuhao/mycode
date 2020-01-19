@@ -1,9 +1,9 @@
 #include <vector>
 #include <igloo/igloo_alt.h>
 using namespace igloo;
-std::vector<int> v;
 std::vector<int> divisible_by(std::vector<int> numbers, int divisor)
 {
+    std::vector<int> v;
     for (auto iter = numbers.begin(); iter != numbers.end(); iter++) {
         if (!(*iter % divisor))
         { v.push_back(*iter); }
