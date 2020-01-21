@@ -68,3 +68,14 @@ string decodeMorse(string morseCode) {
     splitMorseCodeBytes(splitCodeWords, decoded);
     return decoded;
 }
+Describe(Example_from_description)
+{
+    It(should_do_something) {
+        Assert::That(decodeMorse(".... . -.--   .--- ..- -.. ."), Equals("HEY JUDE"));
+    }
+};
+int main(int argc,  char *argv[])
+{
+      return TestRunner::RunAllTests(argc, argv);
+
+}
