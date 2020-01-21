@@ -1,33 +1,22 @@
-#include <vector>
-#include <string>
+#include <math.h>
 #include <igloo/igloo_alt.h>
-static const size_t npos = -1;
 using namespace igloo;
-using namespace std;
-#define V vector<int>
-// void getCnt(long n, long & fiveCnt)
-// {
-    // long tempN = n;
-    // while(tempN>=5&&tempN%5==0) {
-        // tempN=tempN/5;
-        // fiveCnt++;
-    // }
-// }
-void getCnt(long n, long & fiveCnt)
-{
-    long tempN = n;
-    while(tempN%5==0) {
-        tempN=tempN/5;
-        fiveCnt+=1;
-    }
-}
-
 long zeros(long n)
 {
     long fiveCnt = 0;
-    for (long i = 1 ; i <= n; i++) {
-        getCnt(i,fiveCnt);
+    long PowCnt = 0;
+    long baseNum = 0;
+
+    while (pow(5, PowCnt) < n) {
+        PowCnt++;
     }
+
+    for (long i = 1 ; i < PowCnt; i++) {
+        baseNum = pow(5, i);
+        fiveCnt += n / baseNum;
+
+    }
+
     return fiveCnt;
 }
 
@@ -45,8 +34,8 @@ Describe(Sample_Tests)
     }
 
 };
+
 int main(int argc,  char *argv[])
 {
     return TestRunner::RunAllTests(argc, argv);
-
 }
