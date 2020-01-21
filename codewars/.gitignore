@@ -1,0 +1,7 @@
+Session.vim
+*.o
+main
+.gitignore
+*.sw*
+.undodir/
+
