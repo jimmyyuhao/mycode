@@ -5,15 +5,18 @@
 # @Software: vim
 import time
 import unittest
-def josephus(items,k):
+import codewars_test as test
+def myfunc(items,k):
+    return []
 
-    #your code here
 
-Test.assert_equals(josephus([1,2,3,4,5,6,7,8,9,10],1),[1,2,3,4,5,6,7,8,9,10])
-Test.assert_equals(josephus([1,2,3,4,5,6,7,8,9,10],2),[2, 4, 6, 8, 10, 3, 7, 1, 9, 5])
-Test.assert_equals(josephus(["C","o","d","e","W","a","r","s"],4),['e', 's', 'W', 'o', 'C', 'd', 'r', 'a'])
-Test.assert_equals(josephus([1,2,3,4,5,6,7],3),[3, 6, 2, 7, 5, 1, 4])
-Test.assert_equals(josephus([],3),[])
+@test.describe('Example Tests')
+def example_tests():
+    @test.it('Example Test Case')
+    def example_test_case():
+        test.assert_equals(myfunc([1,2,3,4,5,6,7,8,9,10],1),[])
 
-if __name__ == "__main__":
-    unittest.main()
+#if __name__ == "__main__":
+  #  print ("hello world")
+  #  unittest.main()
+
