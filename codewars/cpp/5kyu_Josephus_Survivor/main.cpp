@@ -32,6 +32,16 @@ int josephusSurvivor(int n, int k)
 
     return -1;
 }
+int quick_josephusSurvivor(int n, int k)
+{
+    cout << endl << "n=" << n << "k=" << k << endl;
+    int result = 0;
+    for (int i = 2, result = 0; i <= n; i ++) {
+        result = (result + k) % i;
+    }
+    return result + 1;
+}
+
 
 Describe(JosephusSurvivorTest) {
   It(Examples) {
