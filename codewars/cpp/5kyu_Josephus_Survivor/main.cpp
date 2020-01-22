@@ -7,27 +7,29 @@ using namespace igloo;
 using namespace std;
 int josephusSurvivor(int n, int k)
 {
-    cout<<endl<<"n="<<n<<"k="<<k<<endl;
-    int result;
-    unsigned int *array = (unsigned int *)malloc((n+1) * sizeof(unsigned int));
-    memset(array,0,(n+1)*sizeof(unsigned int));
+    cout << endl << "n=" << n << "k=" << k << endl;
+    unsigned int *array = (unsigned int *)malloc((n + 1) * sizeof(unsigned int));
+    memset(array, 0, (n + 1)*sizeof(unsigned int));
     int total = 0;
     int i = 1;
     int j = 1;
 
-    while(total<n){
+    while (total < n) {
         if (array[i] == 0) {
             if (j == k) {
                 array[i] = 1; j = 1; total++;
-                cout<<"i="<<i<<" total="<<total<<" n="<<n<<endl;
-                if (total == n) { 
-                    return i; }
-            }
-            else j++;
+                cout << "i=" << i << " total=" << total << " n=" << n << endl;
+                if (total == n) {
+                    cout << "result = " << i << endl;
+                    return i;
+                }
+            } else { j++; }
+            // cout <<"j="<<j<<endl;
         }
         i++;
-        if(i > n) i = 1;
+        if (i > n) { i = 1; }
     }
+
     return -1;
 }
 
